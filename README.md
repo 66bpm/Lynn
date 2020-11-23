@@ -1,5 +1,7 @@
+
+
 # Lynn
-A specialized Discord bot that notifies h-manga and h-doujinshi updates from nhentai. Use me if you don't want to open a web browser and get into incognito mode.
+A specialized Discord bot that notifies h-manga and h-doujinshi updates from nhentai. Use me if you don't want to open a web browser and get into incognito mode. [Invite Lynn](https://discord.com/api/oauth2/authorize?client_id=462920710424231936&permissions=3501248&scope=bot)
 
 ## Hello, degenerate user-san.
 I am a specialized Discord bot that notifies h-manga and h-doujinshi updates from nhentai. Use me if you don't want to open a web browser and get into incognito mode.
@@ -16,8 +18,8 @@ To remove the setup channel, use "lynn unset" or "lynn unset #channel"
 
 The setup will come with initial excluded tags that are related to substance, child pornography, and violence.
 
-Currently Lynn doesn't have a website. Please use help command or visit support server for more information.
-https://discord.gg/aaqvqbeMCm
+Currently Lynn doesn't have a website. Please use help command or visit [support server](https://discord.gg/aaqvqbeMCm) for more information.
+
 
 Use "lynn help" to learn more about commands.
 
