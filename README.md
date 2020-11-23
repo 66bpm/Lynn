@@ -18,3 +18,16 @@ The setup will come with initial excluded tags that are related to substance, ch
 
 Currently Lynn doesn't have a website. Please use help command or visit support server for more information.
 https://discord.gg/aaqvqbeMCm
+
+Use "lynn help" to learn more about commands.
+
+#### How inclusion filter works:
+If new hentai has any tag in channel's tag inclusion, the hentai will be shown.
+Else bot won't send a message
+
+#### How exclusion filter works:
+If new hentai has any tag in channel's tag exclusion, the hentai will be not shown.
+Else bot will  send a message
+
+#### How language filter works:
+Similar to inclusion, but for language. Currently nhentai (or at least majority of them) are either in english, chinese, or japanese
