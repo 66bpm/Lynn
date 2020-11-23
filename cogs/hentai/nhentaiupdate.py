@@ -107,7 +107,8 @@ class NHentaiFeed(commands.Cog):
                     channelRows = await con.fetch('SELECT channel_id, included_tags, excluded_tags, languages FROM channels ORDER BY guild_id ASC;')
                     for i in range(self.bot.latestID+1, newestHentaiId+1):
                         hentaiRow = await con.fetchrow('SELECT * FROM hentai WHERE id = ' + str(i))
-                        await shareFunc.Notify(self, hentaiRow, channelRows)
+                        if (hentaiRow != None):
+                            await shareFunc.Notify(self, hentaiRow, channelRows)
                     await self.bot.GetLatestID()
 
 def setup(bot):
