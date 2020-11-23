@@ -73,6 +73,14 @@ class LynnBot(commands.Bot):
             row = await con.fetchrow("SELECT id FROM hentai ORDER BY 1 DESC LIMIT 1;")
             self.latestID = row[0]
 
+    async def on_command_error(self, ctx, error):
+        embedMessage = discord.Embed(
+                color = discord.Color(self.embedColor),
+                description = str(error)
+            )
+        await ctx.send(embed = embedMessage)
+
+
     async def on_guild_remove(self, guild):
         async with self.dbPool.acquire() as con:
             await con.execute('DELETE FROM channels WHERE guild_id = '+str(guild.id)+';')

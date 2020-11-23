@@ -1,10 +1,13 @@
+import aiohttp
 import asyncio
 import asyncpg
+from bs4 import BeautifulSoup
+import datetime
 import discord
 from discord.ext import tasks, commands
 from random import seed, randint, choice
 import time
-from . import shareFunc
+from .. import shareFunc
 
 def to_lower(argument):
     return argument.lower()
