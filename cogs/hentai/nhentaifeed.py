@@ -436,6 +436,7 @@ class NHentaiFeed(commands.Cog):
                                 await con.execute("UPDATE hentai SET title = "+str(title)+", cover_url = "+str(cover)+", parodies = "+str(parodies)+", characters = "+str(characters)+", tags = "+str(tags)+", artists = "+str(artists)+", groups = "+str(groups)+", languages = "+str(languages)+", categories = "+str(categories)+", pages = "+str(pages)+" WHERE id = "+str(i))
                         except:
                             print("404 #ID: " + str(i))
+                    await asyncio.sleep(0)
 
     @_nhentaifeed.command(name='set', pass_context=True, aliases=['s'])
     @commands.guild_only()
@@ -723,6 +724,7 @@ class NHentaiFeed(commands.Cog):
         
                         for i in range (len(hentaiRows)-1, -1, -1):
                             await shareFunc.Notify(self, hentaiRows[i], channelRows)
+                            await asyncio.sleep(0)
 
                     else:
                         outmsg = "["+str(channel)+"](https://discordapp.com/channels/"+str(ctx.message.guild.id) + "/" + str(channel.id) + "/) is not set."
@@ -740,6 +742,7 @@ class NHentaiFeed(commands.Cog):
                     hentaiRows = await con.fetch('SELECT * FROM hentai ORDER BY id DESC LIMIT ' + str(num) +';')
                     for i in range (len(hentaiRows)-1, -1, -1):
                         await shareFunc.Notify(self, hentaiRows[i], channelRows)
+                        await asyncio.sleep(0)
                 else:
                     outmsg = "["+str(channel)+"](https://discordapp.com/channels/"+str(ctx.message.guild.id) + "/" + str(channel.id) + "/) is not set."
                     await shareFunc.SendDescriptionOnlyEmbed(self,ctx, outmsg)
@@ -765,6 +768,7 @@ class NHentaiFeed(commands.Cog):
                 hentaiRows = await con.fetch('SELECT * FROM hentai ORDER BY id DESC LIMIT ' + str(num) +';')
                 for i in range (len(hentaiRows)-1, -1, -1):
                     await shareFunc.Notify(self,hentaiRows[i], channelRows)
+                    await asyncio.sleep(0)
             else:
                 outmsg = "No set channels."
                 await shareFunc.SendDescriptionOnlyEmbed(self, ctx, outmsg)
@@ -811,9 +815,11 @@ class NHentaiFeed(commands.Cog):
                         for i in range (len(hentaiRows)-1, -1, -1):
                             m = await shareFunc.Notify(self,hentaiRows[i], channelRows)
                             msg += m
+                            await asyncio.sleep(0)
                         await asyncio.sleep(10)
                         for message in msg:
                             await message.delete()
+                            await asyncio.sleep(0)
                     else:
                         outmsg = "["+str(channel)+"](https://discordapp.com/channels/"+str(ctx.message.guild.id) + "/" + str(channel.id) + "/) is not set."
                         await shareFunc.SendDescriptionOnlyEmbed(self, ctx, outmsg)
@@ -830,6 +836,7 @@ class NHentaiFeed(commands.Cog):
                     hentaiRows = await con.fetch('SELECT * FROM hentai ORDER BY id DESC LIMIT ' + str(num) +';')
                     for i in range (len(hentaiRows)-1, -1, -1):
                         await shareFunc.Notify(self,hentaiRows[i], channelRows)
+                        await asyncio.sleep(0)
                 else:
                     outmsg = "["+str(channel)+"](https://discordapp.com/channels/"+str(ctx.message.guild.id) + "/" + str(channel.id) + "/) is not set."
                     await shareFunc.SendDescriptionOnlyEmbed(self, ctx, outmsg)
@@ -857,10 +864,12 @@ class NHentaiFeed(commands.Cog):
                 for i in range (len(hentaiRows)-1, -1, -1):
                     m = await shareFunc.Notify(self, hentaiRows[i], channelRows)
                     msg += m
+                    await asyncio.sleep(0)
                 
                 await asyncio.sleep(10)
                 for message in msg:
                     message.delete()
+                    await asyncio.sleep(0)
             else:
                 outmsg = "No set channels."
                 await shareFunc.SendDescriptionOnlyEmbed(self, ctx, outmsg)

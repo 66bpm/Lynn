@@ -103,12 +103,14 @@ class NHentaiFeed(commands.Cog):
                                     await con.execute("UPDATE hentai SET title = "+str(title)+", cover_url = "+str(cover)+", parodies = "+str(parodies)+", characters = "+str(characters)+", tags = "+str(tags)+", artists = "+str(artists)+", groups = "+str(groups)+", languages = "+str(languages)+", categories = "+str(categories)+", pages = "+str(pages)+" WHERE id = "+str(i))
                             except:
                                 print("404 #ID: " + str(i))
+                        await asyncio.sleep(0)
                     await self.bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name= str(newestHentaiId) + " [" + now.strftime("%H:%M") + " UTC]"))
                     channelRows = await con.fetch('SELECT channel_id, included_tags, excluded_tags, languages FROM channels ORDER BY guild_id ASC;')
                     for i in range(self.bot.latestID+1, newestHentaiId+1):
                         hentaiRow = await con.fetchrow('SELECT * FROM hentai WHERE id = ' + str(i))
                         if (hentaiRow != None):
                             await shareFunc.Notify(self, hentaiRow, channelRows)
+                        await asyncio.sleep(0)
                     await self.bot.GetLatestID()
 
 def setup(bot):
