@@ -1,4 +1,5 @@
 
+# Lynn V2 IS COOMING!!!
 
 # Lynn
 A specialized Discord bot that notifies h-manga and h-doujinshi updates from nhentai. Use me if you don't want to open a web browser and get into incognito mode. [Invite Lynn](https://discord.com/api/oauth2/authorize?client_id=462920710424231936&permissions=3501248&scope=bot)
